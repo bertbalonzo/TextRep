@@ -24,16 +24,22 @@ import csv
 import shutil 
 import fileinput
 
+
+def text_rep_dir(cwd):
+    dirs = ['Infile', 'Outfile']
+    for f in dirs:
+        if not os.path.exists(f):
+            os.makedirs(f)
+
+
 # target file for replacement 
 class tar_file:
-    def __init__(self, cwd, fname, in_, out_):
+    def __init__(self, cwd, fname):
         self.cwd    = cwd
         self.fname  = fname
-        self.in_    = in_
-        self.pti    = cwd+'/'+in_+'/'+fname
-        self.out_   = out_ 
-        self.pto    = cwd+'/'+out_+'/'+fname 
-        self.pta    = cwd+'/'+out_+'/'+'search_count_'+fname      
+        self.pti    = cwd+'/'+'Infile'+'/'+fname
+        self.pto    = cwd+'/'+'Outfile'+'/'+fname 
+        self.pta    = cwd+'/'+'Outfile'+'/'+'search_count_'+fname      
 
     def search_count(self, search):
         s_count = {} 
@@ -57,14 +63,10 @@ class tar_file:
         
 # mapping attributes 
 class map_file:
-    def __init__(self, cwd, fname, in_):
+    def __init__(self, cwd, fname):
         self.cwd   = cwd
         self.fname = fname
-        self.in_   = in_
-        self.pti   = cwd+'/'+in_+'/'+fname
-
-
-
+        self.pti   = cwd+'/'+'Infile'+'/'+fname
         
     def map_to_dict(self):
         mt = {} 
@@ -86,7 +88,7 @@ def tex_rep(f_in, map_): # f_inshould be a class
 ######### Calls ###############################################################
         
 cwd = os.getcwd() 
-p = tar_file(cwd, 'PALLADIUM.txt', 'Infile', 'Outfile' )        
-m = map_file(cwd, 'replacement.txt', 'Infile' )        
+p = tar_file(cwd, 'PALLADIUM.txt')       
+m = map_file(cwd, 'replacement.txt')        
 search = ['WANG', 'CHINA'] 
 ##test

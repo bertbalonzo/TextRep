@@ -41,3 +41,10 @@ I want a function that will:
     6. write a line in the new file and the values with count replaced 
 
 '''    
+
+
+'''
+I want a function that will create folders:
+    1. In the current direcntory, check if there is already an in/out 
+    2. if none, create the directories 
+'''

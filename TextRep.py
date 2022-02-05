@@ -38,6 +38,7 @@ class tar_file:
         self.cwd    = cwd
         self.fname  = fname
         self.pti    = cwd+'/'+'Infile'+'/'+fname
+        self.out_   = cwd+'/'+'Outfile'+'/'
         self.pto    = cwd+'/'+'Outfile'+'/'+fname 
         self.pta    = cwd+'/'+'Outfile'+'/'+'search_count_'+fname      
 

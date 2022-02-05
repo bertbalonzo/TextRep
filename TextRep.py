@@ -35,14 +35,6 @@ class tar_file:
         self.pto    = cwd+'/'+out_+'/'+fname 
         self.pta    = cwd+'/'+out_+'/'+'search_count_'+fname      
 
-    '''
-    I want a function that will:
-        1. Open a file 
-        2. Count the search words 
-        3. return the search words 
-        4. write the words into a text file 
-    '''
-
     def search_count(self, search):
         s_count = {} 
         
@@ -72,11 +64,7 @@ class map_file:
         self.pti   = cwd+'/'+in_+'/'+fname
 
 
-    '''
-    I want a function that will:
-        1. open a the file
-        2. store the values of the file to adictionary 
-    '''
+
         
     def map_to_dict(self):
         mt = {} 
@@ -85,18 +73,6 @@ class map_file:
                 x , y = line.split(',')
                 mt[x] = y.strip('\n') 
         return mt 
-
-
-'''
-I want a function that will:
-    1. Open the target file 
-    2. Map the old to new vlues using the mapping dictionary 
-    3. replace the values and count the values replaced 
-    4. save the file to a new file 
-    5. print out the file location of the new file
-    6. write a line in the new file and the values with count replaced 
-
-'''
 
 def tex_rep(f_in, map_): # f_inshould be a class 
     shutil.copy(f_in.pti, f_in.out_)

@@ -113,3 +113,4 @@ cwd = os.getcwd()
 p = tar_file(cwd, 'PALLADIUM.txt', 'Infile', 'Outfile' )        
 m = map_file(cwd, 'replacement.txt', 'Infile' )        
 search = ['WANG', 'CHINA'] 
+##test
